@@ -116,39 +116,40 @@ Output : 5 5 25 25 -1 -1
 
 Current Element -> 10
 Stack -> Empty
-	push(10)
+	Result :- 10 -> -1
+	push(10) -> stack is empty()
 Stack -> 10
 
 Current Element -> 25 
 Stack -> 10
 	pop(10)  [10 <= 25], [stack.peek() <= arr[i]], stack.pop(), true
-	Result :- 10 -> -1
-	push(25) 
+	Result :- 25 -> -1
+	push(25) -> stack is empty()
 Stack -> 25
 
 Current Element -> 2  
 Stack -> 25
-	Result :- 25 -> -1 
-	push(2) 
+	Result :- 2 -> 25
+	push(2)  -> [25 <= 2], [stack.peek() <= arr[i]], false 
 Stack -> 25, 2
 
 Current Element -> 5  [2 <= 5], [stack.peek() <= arr[i]],  pop[2]
 Stack -> 25, 2
 	-> pop(2)
 	Result :- 5 -> 25
-	-> push(5)
+	-> push(5) -> [25 <= 5], [stack.peek() <= arr[i]], false 
 Stack -> 25, 5
 
 Current Element -> 3  [5 <= 3], [stack.peek() <= arr[i]] 
 Stack -> 25, 5
 	Result :- 3 -> 5
-	-> push(3)
+	-> push(3)  -> [5 <= 3], [stack.peek() <= arr[i]], false 
 Stack -> 25, 5, 3
 
 Current Element -> 4  [5 <= 4], [stack.peek() <= arr[i]] 
 Stack -> 25, 5, 3
 	-> pop(3)	 -> [3 <= 4], [stack.peek() <= arr[i]], True 
-	4 -> 5
+	Result :- 4 -> 5
 	-> push(4)	 -> [5 <= 4], [stack.peek() <= arr[i]], false 
 Stack -> 25, 5, 4 
 
@@ -158,18 +159,8 @@ Result Array :-
 2 -> 25
 5 -> 25
 3 -> 5
-4 -> 5
+4 -> 5 
  
-
 Assignment :- 
 1. Convert an infix expression into a postfix expression
-2. Convert infix expression to prefix expression 
-
-
-
-
-
-
-
-
-
+2. Convert infix expression to prefix expression  
