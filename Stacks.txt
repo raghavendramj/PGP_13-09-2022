@@ -55,3 +55,56 @@ pop(){
 top(){
 	return stack[top]
 } 
+
+
+1. Check for Balanced Brackets in an expression (well-formedness) using Stack
+
+Input: exp = “[()]{}{[()()]()}” 
+Output: Balanced
+Explanation: all the brackets are well-formed
+
+Input: exp = “[()}” , "[", "]", "(]", "()(", "[()]"
+Output: Not Balanced
+Explanation: all the brackets are well-formed
+ 
+ 
+ 
+
+
+Whenever we encounter an opening bracket, then push the bracket in to the stack
+
+Whenever we encounter an closing bracket, 
+		then peek and verify is the top bracket is matching opening bracket
+			-> pop -> top element in the stack
+			
+Input :- ( [ { } ] )
+
+0 -> ( -> Stack -> (
+1 -> [ -> Stack -> ( [
+2 -> { -> Stack -> ( [ {
+3 -> } -> Matching condition -> peek() -> {  
+				are these matching brackets {  }
+				pop -> {  -> Current Stack -> ( [		
+4 -> ] -> Matching condition -> peek() -> [
+				are these matching brackets [ ]
+				pop -> [ -> Current Stack -> (		
+5 -> ) -> Matching condition -> peek() -> (
+				are these matching brackets  ( )
+				pop ->( -> Current Stack 
+				
+Stack -> Empty =>  So brackets are balanced.
+
+[()}
+
+0 -> [  -> Stack -> [
+1 -> (  -> Stack -> [ (
+2 -> ) -> matching condition ( ), pop ( -> Stack -> [
+3 -> } -> matching condition [ },  Stack -> [
+				
+Stack -> Not Empty =>  So brackets are not balanced.
+
+({[ })]
+
+{[1+(2*3)]/2}
+
+
