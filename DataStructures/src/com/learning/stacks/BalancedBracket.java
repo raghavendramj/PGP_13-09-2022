@@ -52,7 +52,6 @@ public class BalancedBracket {
             System.out.println("Brackets :- " + input + " are not balanced! ");
             return false;
         }
-
     }
 
 

@@ -7,7 +7,7 @@ top() Returns the top element of the stack.
 isEmpty() returns true is stack is empty else false
 size() returns the size of stack
 
-Push: 
+Push:
 Adds an item to the stack. If the stack is full, then it is said to be an Overflow condition.
 ---------
 5    [4]  -> top
@@ -25,14 +25,14 @@ Size  :- 5
 push(newElement)
 begin
 	if stack is full -> (Stack size (5) -> all 5 locations have elements, then you are trying to add an element)
-		return	
+		return
 	increment top
 	stack[top] assign the newElement
-	
+
 Pop:
 Removes an item from the stack. The items are popped in the reversed order in which they are pushed. If the stack is empty, then it is said to be an Underflow condition.
 ---------
- 
+
 ---------
 4 [3]   -> top
 ---------
@@ -46,7 +46,7 @@ Size  :- 5
 pop(){
 	if(stack is empty){
 		return
-	}	
+	}
 	int removedValue = stack[top];
 	decrement top; top--
 	return removedValue;
@@ -54,44 +54,44 @@ pop(){
 
 top(){
 	return stack[top]
-} 
+}
 
 
 1. Check for Balanced Brackets in an expression (well-formedness) using Stack
 
-Input: exp = “[()]{}{[()()]()}” 
+Input: exp = “[()]{}{[()()]()}”
 Output: Balanced
 Explanation: all the brackets are well-formed
 
 Input: exp = “[()}” , "[", "]", "(]", "()(", "[()]"
 Output: Not Balanced
 Explanation: all the brackets are well-formed
- 
- 
- 
+
+
+
 
 
 Whenever we encounter an opening bracket, then push the bracket in to the stack
 
-Whenever we encounter an closing bracket, 
+Whenever we encounter an closing bracket,
 		then peek and verify is the top bracket is matching opening bracket
 			-> pop -> top element in the stack
-			
+
 Input :- ( [ { } ] )
 
 0 -> ( -> Stack -> (
 1 -> [ -> Stack -> ( [
 2 -> { -> Stack -> ( [ {
-3 -> } -> Matching condition -> peek() -> {  
+3 -> } -> Matching condition -> peek() -> {
 				are these matching brackets {  }
-				pop -> {  -> Current Stack -> ( [		
+				pop -> {  -> Current Stack -> ( [
 4 -> ] -> Matching condition -> peek() -> [
 				are these matching brackets [ ]
-				pop -> [ -> Current Stack -> (		
+				pop -> [ -> Current Stack -> (
 5 -> ) -> Matching condition -> peek() -> (
 				are these matching brackets  ( )
-				pop ->( -> Current Stack 
-				
+				pop ->( -> Current Stack
+
 Stack -> Empty =>  So brackets are balanced.
 
 [()}
@@ -100,11 +100,53 @@ Stack -> Empty =>  So brackets are balanced.
 1 -> (  -> Stack -> [ (
 2 -> ) -> matching condition ( ), pop ( -> Stack -> [
 3 -> } -> matching condition [ },  Stack -> [
-				
+
 Stack -> Not Empty =>  So brackets are not balanced.
 
 ({[ })]
 
 {[1+(2*3)]/2}
 
+
+
+Next greater element in same order as input
+Given an array, print the Next Greater Element (NGE) for every element. The Next greater Element for an element x is the first greater element on the right side of x in array. Elements for which no greater element exist, consider next greater element as -1. The next greater elements should be printed in same order as input array.
+
+Input : arr[] = [4, 5, 2, 25}
+Output : 5 25 25 -1
+
+Input : arr[] = [4, 3, 5, 2, 25, 10]
+Output : 5 5 25 25 -1 -1 
+
+Current Element -> 10 ->
+Stack -> Empty -> 10
+
+Current Element -> 25, Condition [10 <= 25], [stack.peek() <= arr[i]] =>  stack.pop() -> 10
+Stack -> Empty -> 25
+
+Current Element -> 2, Condition [25  <= 2], [stack.peek() <= arr[i]]
+Stack -> 25, 2(Added at the end of the loop)
+2 -> 25
+
+Current Element -> 5, Condition [2  <= 5], [stack.peek() <= arr[i]],  =>  stack.pop() -> 2
+Stack -> 25, 5
+
+Current Element -> 3, Condition [5<= 3], [stack.peek() <= arr[i]]
+Stack -> 25, 5
+
+Current Element -> 4,  Condition [5<= 4], [stack.peek() <= arr[i]]
+Stack -> 25, 5
+
+Result Array :-
+10 -> -1
+25 -> -1
+2 -> 25
+5 -> 25
+3 -> 5
+4 -> 5
+ 
+
+Assignment :- 
+1. Convert an infix expression into a postfix expression
+2. Convert infix expression to prefix expression 
 
