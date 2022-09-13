@@ -1,0 +1,57 @@
+Basic Operations on Stack
+In order to make manipulations in a stack, there are certain operations provided to us.
+
+push() to insert an element into the stack
+pop() to remove an element from the stack
+top() Returns the top element of the stack.
+isEmpty() returns true is stack is empty else false
+size() returns the size of stack
+
+Push: 
+Adds an item to the stack. If the stack is full, then it is said to be an Overflow condition.
+---------
+5    [4]  -> top
+---------
+4 [3]  -> top
+---------
+3 [2]
+---------
+2 [1]
+---------
+1 [0]
+---------
+Size  :- 5
+
+push(newElement)
+begin
+	if stack is full -> (Stack size (5) -> all 5 locations have elements, then you are trying to add an element)
+		return	
+	increment top
+	stack[top] assign the newElement
+	
+Pop:
+Removes an item from the stack. The items are popped in the reversed order in which they are pushed. If the stack is empty, then it is said to be an Underflow condition.
+---------
+ 
+---------
+4 [3]   -> top
+---------
+3 [2]
+---------
+2 [1]
+---------
+1 [0]
+---------
+Size  :- 5
+pop(){
+	if(stack is empty){
+		return
+	}	
+	int removedValue = stack[top];
+	decrement top; top--
+	return removedValue;
+}
+
+top(){
+	return stack[top]
+} 
