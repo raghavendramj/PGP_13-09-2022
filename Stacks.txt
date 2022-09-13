@@ -111,31 +111,46 @@ Stack -> Not Empty =>  So brackets are not balanced.
 
 Next greater element in same order as input
 Given an array, print the Next Greater Element (NGE) for every element. The Next greater Element for an element x is the first greater element on the right side of x in array. Elements for which no greater element exist, consider next greater element as -1. The next greater elements should be printed in same order as input array.
-
-Input : arr[] = [4, 5, 2, 25}
-Output : 5 25 25 -1
-
 Input : arr[] = [4, 3, 5, 2, 25, 10]
-Output : 5 5 25 25 -1 -1 
+Output : 5 5 25 25 -1 -1
 
-Current Element -> 10 ->
-Stack -> Empty -> 10
+Current Element -> 10
+Stack -> Empty
+	push(10)
+Stack -> 10
 
-Current Element -> 25, Condition [10 <= 25], [stack.peek() <= arr[i]] =>  stack.pop() -> 10
-Stack -> Empty -> 25
+Current Element -> 25 
+Stack -> 10
+	pop(10)  [10 <= 25], [stack.peek() <= arr[i]], stack.pop(), true
+	Result :- 10 -> -1
+	push(25) 
+Stack -> 25
 
-Current Element -> 2, Condition [25  <= 2], [stack.peek() <= arr[i]]
-Stack -> 25, 2(Added at the end of the loop)
-2 -> 25
+Current Element -> 2  
+Stack -> 25
+	Result :- 25 -> -1 
+	push(2) 
+Stack -> 25, 2
 
-Current Element -> 5, Condition [2  <= 5], [stack.peek() <= arr[i]],  =>  stack.pop() -> 2
+Current Element -> 5  [2 <= 5], [stack.peek() <= arr[i]],  pop[2]
+Stack -> 25, 2
+	-> pop(2)
+	Result :- 5 -> 25
+	-> push(5)
 Stack -> 25, 5
 
-Current Element -> 3, Condition [5<= 3], [stack.peek() <= arr[i]]
+Current Element -> 3  [5 <= 3], [stack.peek() <= arr[i]] 
 Stack -> 25, 5
+	Result :- 3 -> 5
+	-> push(3)
+Stack -> 25, 5, 3
 
-Current Element -> 4,  Condition [5<= 4], [stack.peek() <= arr[i]]
-Stack -> 25, 5
+Current Element -> 4  [5 <= 4], [stack.peek() <= arr[i]] 
+Stack -> 25, 5, 3
+	-> pop(3)	 -> [3 <= 4], [stack.peek() <= arr[i]], True 
+	4 -> 5
+	-> push(4)	 -> [5 <= 4], [stack.peek() <= arr[i]], false 
+Stack -> 25, 5, 4 
 
 Result Array :-
 10 -> -1
@@ -149,4 +164,12 @@ Result Array :-
 Assignment :- 
 1. Convert an infix expression into a postfix expression
 2. Convert infix expression to prefix expression 
+
+
+
+
+
+
+
+
 
