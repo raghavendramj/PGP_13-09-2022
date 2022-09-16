@@ -163,4 +163,118 @@ Result Array :-
  
 Assignment :- 
 1. Convert an infix expression into a postfix expression
+
+four cases can arise:
+
+If the current token is an opening bracket, '(', push it into the stack.
+If the current token is a closing bracket, ')', pop tokens from the stack until the corresponding opening bracket ‘(‘ is removed. Append each operator at the end of the postfix expression.
+If the current token is an operand, append it at the end of the postfix expression.
+If the current token is an operator, push it on the top of the stack. Before doing that, first pop from the stack till we have a lower precedence operator on top, or the stack becomes empty. Append each operator at the end of the postfix expression.
+
+
+
+Sl.No 		CurrentToken			OperatorStack		 PostfixString
+-------------------------------------------------------------------
+1					A																A
+-------------------------------------------------------------------
+2					*									*							A
+------------------------------------------------------------------- 
+3					(									*(							A
+------------------------------------------------------------------- 
+4					B									*(							AB
+------------------------------------------------------------------- 
+5					*									*(	*						AB
+------------------------------------------------------------------- 
+6					C									*(	*						ABC
+------------------------------------------------------------------- 
+7					+								   *(+						ABC*
+------------------------------------------------------------------- 
+8					D								   *(+						ABC*D
+------------------------------------------------------------------- 
+9					*								   *(+*						ABC*D
+------------------------------------------------------------------- 
+10				E								   *(+*					ABC*DE
+------------------------------------------------------------------- 
+11				)								    * 						ABC*DE*+
+------------------------------------------------------------------- 
+12				+								    + 					ABC*DE*+*
+------------------------------------------------------------------- 
+13				F							    + 						ABC*DE*+*F
+------------------------------------------------------------------- 
+14				 							     							ABC*DE*+*F+
+------------------------------------------------------------------- 
+
+Input  -> A*(B*C+D*E)+F   ===> Output -> ABC*DE*+*F+  == ABC*DE*+*F+ 
+
+
+Algorithm:-
+	
+	//Lower the number ---> higher the precedence.
+	int precedence(char character){
+		if(character == '*' || character == '/' )
+			return 3;
+		if(character == '+' || character == '-' )
+			return 4;
+		if(character == '&')
+			return 5;
+		if(character == '^')
+			return 6;
+		if(character == '|')
+			return 7; 
+		return max_value; 
+	}
+	
+	boolean isOperand(char character){
+		return true if char is [a-z] || [A-Z] || [0-9] 
+	}
+	
+	
+	string infixToPostfix(infix){
+		
+		//base case.
+		if infix == null  or infix's length is 0
+		return infix;
+		
+		stack;
+		postfixExpression;
+		If the current token is an opening bracket, '(', push it into the stack.
+		If the current token is a closing bracket, ')', pop tokens from the stack until the corresponding opening bracket ‘(‘ is removed. Append each operator at the end of the postfix expression.
+		If the current token is an operand, append it at the end of the postfix expression.
+		If the current token is an operator, push it on the top of the stack. Before doing that, first pop from the stack till we have a lower precedence operator on top, or the stack becomes empty. Append each operator at the end of the postfix expression.
+
+		for(every eachChar in infix){
+			//case 1 :- 				
+				if opening bracket, '(', push it into the stack.
+				stack.push(eachChar)
+			//case 2 :-  
+			else If the current token is a closing bracket ')'
+				while(stack.peek() != '('){
+					postfixExpression += stack.pop();
+				}
+				stack.pop(); // will remove the opening bracket as well.				
+			}
+			Case 3:- //If the current token is an operand, append it at the end of the postfix expression
+			else if(isOperand(eachChar)){
+				postfixExpression += eachChar;
+			} 
+			 Case 4. If the current token is an operator
+			 else { //operator case.
+			 
+				// while(!stack.isEmpty() && precedence(eachChar) >= precedence(stack.peek())){
+					postfixExpression += stack.pop();
+				}
+				stack.push(eachChar);
+			 }
+		}
+		
+		while(!stack.isEmpty()){
+			postfixExpression += stack.pop();
+		}
+		return postfixExpression;
+	}
+
+
+
+
+
 2. Convert infix expression to prefix expression  

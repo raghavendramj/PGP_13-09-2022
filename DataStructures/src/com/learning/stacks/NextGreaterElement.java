@@ -31,6 +31,7 @@ public class NextGreaterElement {
             }
             stack.push(arr[i]); //10
         }
+        System.out.println("\n Result is :- ");
         for (int i = 0; i < n; i++) {
             System.out.println(arr[i] + " :- " + result[i]);
         }
@@ -39,6 +40,8 @@ public class NextGreaterElement {
     public static void main(String[] args) {
         int arr[] = {4, 3, 5, 2, 25, 10};
         printNextGreaterElement(arr);
+//        printNextGreaterElement(new int []{4, 5, 2, 25});
+//        printNextGreaterElement(new int []{5, 1, 6, 2 , 8, 9, 3});
 
     }
 
