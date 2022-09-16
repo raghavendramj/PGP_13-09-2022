@@ -1,0 +1,44 @@
+A queue is a linear data structure that stores the elements sequentially. It uses the FIFO approach (First In First Out) for accessing elements. 
+
+There are four different types of queues in data structures:
+
+Simple Queue
+	It is the most basic queue in which the insertion of an item is done at the front of the queue and deletion takes place at the end of the queue. (FIFO)
+Circular Queue
+	A circular queue is a special case of a simple queue in which the last member is linked to the first. As a result, a circle-like structure is formed
+Priority Queue
+	In a priority queue, the nodes will have some predefined priority in the priority queue. The node with the least priority will be the first to be removed from the queue. Insertion takes place in the order of arrival of the nodes.
+Double-Ended Queue (Deque)
+	In a double-ended queue, insertion and deletion can take place at both the front and rear ends of the queue.
+
+
+
+LRU Cache Implementation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

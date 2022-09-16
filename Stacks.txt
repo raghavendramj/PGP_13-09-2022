@@ -273,8 +273,7 @@ Algorithm:-
 		return postfixExpression;
 	}
 
-
-
-
-
 2. Convert infix expression to prefix expression  
+
+
+
