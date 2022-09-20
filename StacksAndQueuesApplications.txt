@@ -1,0 +1,111 @@
+Q1:- Merging Overlapping Intervals
+Given a set of intervals, print all non-overlapping intervals after merging the overlapping intervals.
+
+For example,
+Input:  {1, 5}, {12, 15}, {2, 3}, {7, 8}, {4, 6}, {8, 10}
+Output: Intervals after merging overlapping intervals are {1, 6}, {7, 10}, {12, 15}.
+
+Interval
+	-> start -> 1, 2, 4, 7, 8, 12
+	-> end -> 5, 3, 6, 8, 10, 15
+
+Sort the objects
+	-> {1, 5}, {2, 3}, {4, 6}, {7, 8}, {8, 10}, {12, 15}
+
+Stack :-
+
+
+	mergeIntervals(List<Interval> ints){
+		Collections.sort(ints, Comparator.comparing(a, a.begin)); //Result is intervals are sorted.
+		Stack<Interval> stack = new Stack();
+
+		for(Interval curr : ints){
+
+			// if the stack is empty
+				 or
+			// the top interval in the stack does not overlap with the current interval,
+			// push it into the stack
+			if(stack.empty() || curr.begin > stack.peek().end){
+				stack.push(curr);
+			}
+			1, 5   -> 4, 6   => 1, 6
+
+			if(stack.peek().end < curr.end) {
+				stack.peek().end = curr.end;
+			}
+		}
+		return stack;
+	}
+
+	Time complexity :-  n(logn) + n  => n(logn)
+	Space complexity :-  O(n) -> Presence of stack(Outside of your input)
+
+
+Q2:-
+	The Celebrity Problem -> Hard!
+	In a party of N people, only one person is known to everyone. Such a person may be present in the party, if yes, (s)he doesn’t know anyone in the party. We can only ask questions like “does A know B? “. Find the stranger (celebrity) in the minimum number of questions.
+
+	Input:
+	MATRIX = { {0, 0, 1, 0},
+					   {0, 0, 1, 0},
+					   {0, 0, 0, 0},
+					   {0, 0, 1, 0} }
+	Output:id = 2
+	Explanation: The person with ID 2 does not
+	know anyone but everyone knows him
+
+	Input:
+	MATRIX = { {0, 0, 1, 0},
+					   {0, 0, 1, 0},
+					   {0, 1, 0, 0},
+					   {0, 0, 1, 0} }
+	Output: No celebrity
+	Explanation: There is no celebrity.
+
+
+	Input:
+	MATRIX = { {0, 0, 1, 0},
+					   {0, 0, 0, 0},
+					   {0, 0, 0, 0},
+					   {0, 0, 1, 0} }
+					   
+	0  1  2  3		
+ 0 {0, 0, 1, 0},
+ 1 {0, 0, 1, 0},
+ 2  {0, 1, 0, 0},
+ 3  {0, 0, 1, 0} }
+
+	findCelebrity		
+		create a stack		
+		push all the elements in the stack
+		
+		till stack size is 1
+			a <- pop()
+			b <- pop()
+			
+			if(knows(a, b)){
+				push(a);
+			} else {
+				push(b);
+			}
+			
+		if stack is empty
+			no celebrity
+		
+		int posCeleb = stack.pop();  //index
+		
+		for i-> 0 to n
+			i != posCeleb && (knows(posCeleb, i) || !knows(i, posCeleb))
+				no celebrity
+				
+		return posCeleb; //actual celebrity!
+		
+		knows(a, b)
+			return mat[a][b]  == 1; //1 -> a knows b
+				
+		
+			
+			
+
+
+
