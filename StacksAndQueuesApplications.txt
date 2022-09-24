@@ -39,7 +39,7 @@ Stack :-
 
 	Time complexity :-  n(logn) + n  => n(logn)
 	Space complexity :-  O(n) -> Presence of stack(Outside of your input)
-
+---------------------------------------------------------------------------------
 
 Q2:-
 	The Celebrity Problem -> Hard!
@@ -61,51 +61,45 @@ Q2:-
 					   {0, 0, 1, 0} }
 	Output: No celebrity
 	Explanation: There is no celebrity.
+ 
 
-
-	Input:
-	MATRIX = { {0, 0, 1, 0},
-					   {0, 0, 0, 0},
-					   {0, 0, 0, 0},
-					   {0, 0, 1, 0} }
-					   
-	0  1  2  3		
+	0  1  2  3
  0 {0, 0, 1, 0},
  1 {0, 0, 1, 0},
  2  {0, 1, 0, 0},
  3  {0, 0, 1, 0} }
 
-	findCelebrity		
-		create a stack		
+	findCelebrity
+		create a stack
 		push all the elements in the stack
-		
+
 		till stack size is 1
 			a <- pop()
 			b <- pop()
-			
+
 			if(knows(a, b)){
 				push(a);
 			} else {
 				push(b);
 			}
-			
+
 		if stack is empty
 			no celebrity
-		
+
 		int posCeleb = stack.pop();  //index
-		
+
 		for i-> 0 to n
 			i != posCeleb && (knows(posCeleb, i) || !knows(i, posCeleb))
 				no celebrity
-				
+
 		return posCeleb; //actual celebrity!
-		
+
 		knows(a, b)
-			return mat[a][b]  == 1; //1 -> a knows b
-				
-		
-			
-			
+			return mat[a][b]  == 1; //1 -> a knows b  // TC:- 0(1) -> Array fetch!
+	
+	Time complexity :-   O(n)
+	Space complexity :- O(n)   
+
 
 
 
