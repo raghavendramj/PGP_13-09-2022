@@ -1,0 +1,142 @@
+Graphs
+
+A Graph is a non-linear data structure consisting of vertices and edges.
+
+Building Blocks / Components of a graph!
+Vertices: Vertices are the fundamental units of the graph
+Edges: Edges are drawn or used to connect two nodes of the graph
+
+Types Of Graph
+
+1. Null graph!
+	-> a graph with no edges is known as Null graph!
+
+2. Trivial Graph
+	-> Having only single vertex.
+	-> It is also the smallest graph ever possible!
+
+3. Undirected graph
+	-> In which edges don't have any direction
+
+4. Directed graph
+	-> In which edge has direction
+
+5. Connected graph
+	-> In which from one node we can visit any other node in the graph
+
+6. Disconnected graph
+	-> in which at least one node is not reachable from a node
+
+7. Regular Graph
+	-> The graph in which the degree of every vertex is equal to the other vertices of the graph. Let the degree of each vertex be K then the graph
+
+8. Complete Graph
+	-> The graph in which from each node there is an edge to each other node.
+
+9. Cycle Graph
+	The graph in which the graph is a cycle in itself, the degree of each vertex is 2.
+
+10. Cyclic Graph
+	A graph containing at least one cycle is known as a Cyclic graph.
+
+11. Weighted Graph
+	A graph where each of edges also holds a data value.
+
+
+Trees :-
+In the tree in data structures, the node that is the predecessor of any node is known as a parent node, or a node with a branch from itself to any other successive node is called the parent node.
+
+Child
+	The node, a descendant of any node, is known as child nodes in data structures.
+	In a tree, any number of parent nodes can have any number of child nodes.
+	In a tree, every node except the root node is a child node
+
+
+Siblings
+	In trees in the data structure, nodes that belong to the same parent are called siblings.
+
+Leaf
+	Trees in the data structure, the node with no child, is known as a leaf node.
+	In trees, leaf nodes are also called external nodes or terminal nodes
+
+Degree
+	In the tree data structure, the total number of children of a node is called the degree of the node.
+	The highest degree of the node among all the nodes in a tree is called the Degree of Tree.
+
+Level
+In tree data structures, the root node is said to be at level 0, and the root node's children are at level 1, and the children of that node at level 1 will be level 2, and so on.
+
+Height
+In a tree data structure, the number of edges from the leaf node to the particular node in the longest path is known as the height of that node.
+In the tree, the height of the root node is called "Height of Tree".
+
+Depth
+In a tree, many edges from the root node to the particular node are called the depth of the tree.
+In the tree, the total number of edges from the root node to the leaf node in the longest path is known as "Depth of Tree".
+
+Types of Tree in Data Structure
+The following are the different types of trees in data structure:
+
+Binary tree
+In a binary tree, every element/parent node has at most 2 children. Each node can have either 0, 1, or 2 children. Typically, the 2 children are called the left child and the right child.
+ 
+Properties of a Binary tree
+
+A binary tree is either an empty tree or consists of a node called the root node, a left subtree, and a right subtree. The subtrees will also act as a binary tree once.
+The top-most node is called the root.
+A node without children is called a leaf node or terminal node.
+The maximum number of nodes at each level of i is 2^i 
+	Level -> 0 -> 2^0 -> 1
+	Level -> 1 -> 2^1 -> 2
+	Level -> 2 -> 2^2 -> 4
+	Level -> 3 -> 2^3 -> 8
+	Level -> 4 -> 2^4 -> 16
+Height of the tree = the longest path from the root node to the leaf node.
+Depth of a node = the length of the path to its root.
+
+
+Binary trees can be divided into the following types:
+	Perfect binary tree: Every internal node has two child nodes. All the leaf nodes are at the same level.
+	Full binary tree: Every parent node or an internal node has either exactly two children or no child nodes.
+	Complete binary tree: All levels except the last one are full with nodes. 
+	
+Tree Traversal - inorder, preorder and postorder
+ 
+Inorder:- 
+Traverse the left subtree in disorder
+Examine the root ->print(node);
+Traverse the right subtree in disorder
+
+void inOrder(Node node){
+	if(node == null)
+		return;
+	inOrder(node.left);
+	System.out.println(node.value +" -> ");
+	inOrder(node.right); 
+}
+
+Preorder
+Examine the root
+Traverse the left subtree in preorder
+Traverse the right subtree in preorder
+
+void preOrder(Node node){
+	if(node == null)
+		return;
+	System.out.println(node.value +" -> ");
+	preOrder(node.left);
+	preOrder(node.right); 
+}
+ 
+Postorder
+Traverse the left sub-tree in postorder
+Travel the right sub-tree in postorder
+Examine the root 
+
+void postOrder(Node node){
+	if(node == null)
+		return;
+	postOrder(node.left);
+	postOrder(node.right); 
+	System.out.println(node.value +" -> ");
+} 
