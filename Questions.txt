@@ -1,0 +1,9 @@
+Q1) Find a code to get the height of a tree 
+Q2) Print the diameter of a binary tree
+
+Q1) Determine if 2 trees are identical 
+Q2) Level order traversal of a binary tree Modify it to print the largest node value at each level (Revision of queues)
+Q3) Lowest common ancestor of a binary tree
+Q4) Boundary traversal of a binary tree https://www.geeksforgeeks.org/boundary-traversal-of-binary-tree/ 
+Q5) Maximum sum leaf to root path https://www.geeksforgeeks.org/find-the-maximum-sum-path-in-a-binary-tree/ 
+Q6) Vertical sum tree https://www.geeksforgeeks.org/vertical-sum-in-a-given-binary-tree/ 

@@ -140,3 +140,35 @@ void postOrder(Node node){
 	postOrder(node.right); 
 	System.out.println(node.value +" -> ");
 } 
+
+Q1. Find the Maximum Depth or Height of given Binary Tree
+
+int height(Node node){
+	if(node == null){
+		return 0;
+	}	
+	int leftHeight =  height(node.left);
+	int rightHeight =  height(node.right);	
+	return 1+ Math.max(leftHeight, rightHeight);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
