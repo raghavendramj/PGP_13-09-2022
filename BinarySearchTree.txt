@@ -1,0 +1,33 @@
+What is BST, concepts, time complexity. 
+Compare Binary tree and binary search tree. 
+Code to construct a bst, insert an element.
+
+
+Algorithm :- (root, data)
+	
+	insertElement(root, data)
+	-> if node null
+			make this as root
+			return root
+	
+		else if data < root.data
+			root.left = insertElement(root.left, data);
+	
+		else if data > root.data
+			root.right = insertElement(root.right, data);
+			
+	return root;
+
+
+Assignments :- 
+----------------
+1. Delete an element from the BST
+2. 	Border Traversal
+3. Vertical sum of a given binary tree
+4. Check whether 2 trees are symmetrical
+5. 
+
+
+
+	
+

@@ -8,7 +8,6 @@ import java.util.Queue;
 public class LevelOrderTraversal {
 
     public static void main(String[] args) {
-
         Node node = new Node(1);
         node.left = new Node(2);
         node.right = new Node(3);
@@ -16,13 +15,10 @@ public class LevelOrderTraversal {
         node.left.right = new Node(5);
         node.right.left = new Node(6);
         node.right.right = new Node(7);
-
         printLevelOrder(node);
-
     }
 
     private static void printLevelOrder(Node node) {
-
         if (node == null)
             return;
 
@@ -30,8 +26,7 @@ public class LevelOrderTraversal {
         nodeQueue.add(node);
         while (!nodeQueue.isEmpty()) {
             Node tempNode = nodeQueue.poll(); //remove an element from the queue.
-
-            System.out.print(tempNode.data + " -> ");
+            System.out.print(tempNode.data + " ");
 
             if (tempNode.left != null) {
                 nodeQueue.add(tempNode.left);
@@ -52,13 +47,9 @@ public class LevelOrderTraversal {
         nodeQueue.add(node);
         nodeQueue.add(new Node(Integer.MAX_VALUE)); //dummy node added
 
-
-
         List<Integer> eachLevelList = new ArrayList<>();
         while (!nodeQueue.isEmpty()) {
             Node tempNode = nodeQueue.poll(); //remove an element from the queue.
-
-
             if (tempNode.data == Integer.MAX_VALUE) {
                 levels.add(eachLevelList);
                 eachLevelList = new ArrayList<>();
@@ -69,13 +60,10 @@ public class LevelOrderTraversal {
                 } else {
                     nodeQueue.add(new Node(Integer.MAX_VALUE));
                 }
-
             } else {
                 System.out.print(tempNode.data + " -> ");
                 eachLevelList.add(tempNode.data);
             }
-
-
             if (tempNode.left != null) {
                 nodeQueue.add(tempNode.left);
             }
@@ -83,7 +71,6 @@ public class LevelOrderTraversal {
                 nodeQueue.add(tempNode.right);
             }
         }
-
         return levels;
     }
 }

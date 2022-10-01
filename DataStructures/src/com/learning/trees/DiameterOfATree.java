@@ -3,7 +3,7 @@ package com.learning.trees;
 public class DiameterOfATree {
 
     Node root;
-    int diamater = 0;
+    int diameter = 0;
 
     public static void main(String[] args) {
 
@@ -17,8 +17,7 @@ public class DiameterOfATree {
 
         binaryTree.diameter(binaryTree.root);
         System.out.println("Height of tree is : " + binaryTree.diameter(binaryTree.root));
-        System.out.println("Diameter of tree is : " + binaryTree.diamater);
-
+        System.out.println("Diameter of tree is : " + binaryTree.diameter);
     }
 
     private int diameter(Node root) {
@@ -26,7 +25,7 @@ public class DiameterOfATree {
             return 0;
         int leftHeight = diameter(root.left);
         int rightHeight = diameter(root.right);
-        diamater = Math.max(diamater, (1 + leftHeight + rightHeight));
+        diameter = Math.max(diameter, (1 + leftHeight + rightHeight));
         return 1 + Math.max(leftHeight, rightHeight);
     }
 }
