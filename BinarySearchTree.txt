@@ -24,8 +24,7 @@ Assignments :-
 1. Delete an element from the BST
 2. 	Border Traversal
 3. Vertical sum of a given binary tree
-4. Check whether 2 trees are symmetrical
-5. 
+4. Check whether 2 trees are symmetrical 
 
 
 
