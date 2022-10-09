@@ -1,0 +1,35 @@
+1. Boundary Traversal of a BT 
+2. Top view of a BT
+3. Bottom view of a BT
+
+
+
+Boundary Traversal of binary tree
+
+20, 8, 22, 12, 10, 4, 14
+
+Inorder
+ 4 -> 8 -> 10 -> 12 -> 14 -> 20 -> 22 -> 25
+ 
+Deleting a node from BST
+Vertical sum of a given binary tree
+Check whether 2 trees are symmetrical / mirror image of the same.
+Check whether given BT is a BST.
+
+Sorted Array to Balanced BST
+Find the maximum sum leaf to root path in a Binary Tree
+Find k’th smallest node in a BST
+Find k’th largest node in a BST
+Convert a binary tree to a full tree by removing half nodes
+Convert a binary tree to its mirror
+Transform a BST to greater sum tree 
+
+
+
+Assignments:- 
+Construct BST from given preorder traversal
+K’th Largest element in BST using constant extra space (Assignment)
+T.C :- O(n) & S.C :- O(n)
+T.C :- O(n) & S.C :- O(1) 
+
+
