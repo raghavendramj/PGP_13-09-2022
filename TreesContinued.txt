@@ -23,13 +23,16 @@ Find k’th largest node in a BST
 Convert a binary tree to a full tree by removing half nodes
 Convert a binary tree to its mirror
 Transform a BST to greater sum tree 
-
+Binary Tree to Binary Search Tree Conversion
 
 
 Assignments:- 
 Construct BST from given preorder traversal
 K’th Largest element in BST using constant extra space (Assignment)
 T.C :- O(n) & S.C :- O(n)
-T.C :- O(n) & S.C :- O(1) 
+T.C :- O(n) & S.C :- O(1)
+		-> Morris Traversal
 
+
+What is n-array trees. Tries definition, why they are need, some use cases of tries in real world
 
