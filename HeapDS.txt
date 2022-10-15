@@ -9,8 +9,8 @@ Operations possible in a Heap Data Structure.
 
 Generally, Heaps can be of two types:
 
-Max-Heap: In a Max-Heap the key present at the root node must be greatest among the keys present at all of it’s children. The same property must be recursively true for all sub-trees in that Binary Tree.
-Min-Heap: In a Min-Heap the key present at the root node must be minimum among the keys present at all of it’s children. The same property must be recursively true for all sub-trees in that Binary Tree.
+Max-Heap: In a Max-Heap the key present at the root node must be greatest among the keys present at all of it’s children. The same property must be recursively true for all sub-trees in that Binary Tree.mum among the keys present at all of it’s children. The same property must be recursively true for all sub-trees in that Binary Tree.
+Min-Heap: In a Min-Heap the key present at the root node must be mini
 
 Advantages of Heap Data Structure:
 
@@ -21,3 +21,83 @@ To just peek at the most prior element the time complexity is constant O(1).
 Disadvantages of Heap Data Structure:
 
 The time complexity for searching an element in Heap is O(N).
+
+void insertIntoHeap(int arr[],  int n, int newValue){
+	n = n+1;
+	arr[n] = newValue;
+	
+	int i = n;
+	while( i > 1){
+		int parent = i/2;
+		if(arr[parent] < arr[i]){
+			swap(arr, parent, i);
+			i = parent;
+		} else {
+			return;
+		}
+	}
+}
+ 
+void deleteElement(int arr[], int n){
+	arr[1] = arr[n]; // Replacing the root with rightmost child
+	
+	n = n-1;
+	
+	i =1; //root
+	
+	while(i < n){
+		int left = arr[2 * i];
+		int right = arr[2 * i + 1];		
+		int largestIndex = left > right ? 2 * i : 2 * i + 1;		
+		if(arr[i] < arr[largestIndex]){
+			swap(arr, i, largestIndex);
+			i = largestIndex;
+		} else {
+			return;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
