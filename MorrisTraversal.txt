@@ -1,0 +1,34 @@
+List<Integer> morrisInOrderTraversal(Node root){
+	List<Integer> inOrder = new ArrayList<>();
+	Node cur = root;
+	
+	while(cur != null){
+	
+		//Case1:- If left is null, print the current node and go right.
+		if(cur.left == null){
+			inOrder.add(cur.data);
+			cur = cur.right;
+		} else {
+		//Case 2:- before going left for curr node, 
+						make the right most node on left subtree connected to current node, 
+						then go left.
+			Node prev = cur.left;
+			//Condition 1:- did we reach right most node 2:- do we have alread connection to current node.
+			while(prev.right != null && prev.right != cur){
+				prev = prev.right; //Rightmost of the left subtree..
+			} 
+			if(prev.right == null){
+				prev.right = cur; //Creation of thread/connection to the current
+				cur = cur.left; //Move to the left
+			} else {
+				Case 3:- //There is already a thread/connection
+				prev.right = null;
+				inOrder.add(cur.data);
+				cur = curr.right;
+			}
+		}
+	}
+
+
+	return inOrder;
+}
