@@ -151,24 +151,3 @@ int height(Node node){
 	int rightHeight =  height(node.right);	
 	return 1+ Math.max(leftHeight, rightHeight);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

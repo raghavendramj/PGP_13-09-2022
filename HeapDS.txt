@@ -1,4 +1,4 @@
-Heap Data Structure 
+Heap Data Structure
 A heap is a special tree based structure in which the tree is a complete binary tree.
 
 Operations possible in a Heap Data Structure.
@@ -21,11 +21,12 @@ To just peek at the most prior element the time complexity is constant O(1).
 Disadvantages of Heap Data Structure:
 
 The time complexity for searching an element in Heap is O(N).
+[7,9,3,4,16,90 ]
 
 void insertIntoHeap(int arr[],  int n, int newValue){
 	n = n+1;
 	arr[n] = newValue;
-	
+
 	int i = n;
 	while( i > 1){
 		int parent = i/2;
@@ -37,18 +38,15 @@ void insertIntoHeap(int arr[],  int n, int newValue){
 		}
 	}
 }
- 
+
 void deleteElement(int arr[], int n){
 	arr[1] = arr[n]; // Replacing the root with rightmost child
-	
 	n = n-1;
-	
 	i =1; //root
-	
 	while(i < n){
 		int left = arr[2 * i];
-		int right = arr[2 * i + 1];		
-		int largestIndex = left > right ? 2 * i : 2 * i + 1;		
+		int right = arr[2 * i + 1];
+		int largestIndex = left > right ? 2 * i : 2 * i + 1;
 		if(arr[i] < arr[largestIndex]){
 			swap(arr, i, largestIndex);
 			i = largestIndex;
@@ -57,6 +55,40 @@ void deleteElement(int arr[], int n){
 		}
 	}
 }
+------------------------------------------------------------------
+heapify
+---------------------------------------
+10 -> 30 -> 50 -> 20 -> 35 -> 15
+---------------------------------------
+
+//For Max-Heap
+void heapify(int arr[], int n, int i){
+	int largest = i;
+	int left = 2 * i;
+	int right = 2 * i +1;
+	
+	if(left <= n && arr[left] > arr[largest]){
+		largest = left; 
+	} 
+	if(right <= n && arr[right] > arr[largest]){
+		largest = right; 
+	}
+	
+	if(largest != i) {
+		swap(arr, i, largest);
+		heapify(arr, n, largest);
+	} 
+}
+---------------------------------------
+Building the heap using heapify from an array.
+
+buildHeap(int arr[], int n){	
+	for(int i = n/2; i> 0; i--){
+		heapify(a, n, i);
+	}
+}
+10 -> 30 -> 50 -> 20 -> 35 -> 15
+---------------------------------------
 
 
 
@@ -80,23 +112,16 @@ void deleteElement(int arr[], int n){
 
 
 
+------------------------------------------------------------------
+K’th Smallest/Largest Element in Unsorted Array
 
+Given an array and a number K where K is smaller than the size of the array. Find the K’th smallest element in the given array. Given that all array elements are distinct.
 
+Input: arr[] = {7, 10, 4, 3, 20, 15}, K = 3 
+Output: 7
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Input: arr[] = {7, 10, 4, 3, 20, 15}, K = 4 
+Output: 10 
 
 
 
