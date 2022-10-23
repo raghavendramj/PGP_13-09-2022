@@ -45,16 +45,26 @@ public class IsBinayTreeAHeap {
     public static void main(String[] args) {
         IsBinayTreeAHeap tree = new IsBinayTreeAHeap();
 
-        Node root = new Node(10);
-        root.left = new Node(9);
-        root.right = new Node(8);
-        root.left.left = new Node(17);
-        root.left.right = new Node(6);
-        root.right.left = new Node(5);
-        root.right.right = new Node(4);
-        root.left.left.left = new Node(3);
-        root.left.left.right = new Node(2);
-        root.left.right.left = new Node(1);
+//        Node root = new Node(10);
+//        root.left = new Node(9);
+//        root.right = new Node(8);
+//        root.left.left = new Node(17);
+//        root.left.right = new Node(6);
+//        root.right.left = new Node(5);
+//        root.right.right = new Node(4);
+//        root.left.left.left = new Node(3);
+//        root.left.left.right = new Node(2);
+//        root.left.right.left = new Node(1);
+
+        Node root = new Node(51);
+        root.left = new Node(48);
+        root.right = new Node(35);
+
+        root.left.left = new Node(22);
+        root.left.right = new Node(25);
+
+        root.right.left = new Node(20);
+        root.right.right = new Node(30);
 
         boolean isBTaHeap = tree.isGivenBTisAHeap(root);
 

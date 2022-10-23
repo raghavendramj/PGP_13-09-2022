@@ -45,40 +45,7 @@ public class RelativeRanksInClass {
 
         return result;
 
+        // O(nlog(n))
+
     }
-
-//    private String[] findRelativeRanks(int[] scores) {
-//
-//        int n = scores.length;
-//        HashMap<Integer, Integer> indexValueMap = new LinkedHashMap<>();
-//
-//        //Max-heap
-//        //PriorityQueue<Integer> rankQueue = new PriorityQueue<>(Collections.reverseOrder());
-//        PriorityQueue<Pair> rankQueue = new PriorityQueue<>((a, b) -> b.value - a.value);
-//        for (int i = 0; i < n; i++) {
-//            rankQueue.add(new Pair(i , scores[i]));
-//            indexValueMap.put(scores[i], i);
-//        }
-//        System.out.println(rankQueue);
-//        System.out.println(indexValueMap);
-//
-//
-//        return new String[]{};
-//    }
-//
-//    class Pair {
-//        int index;
-//        int value;
-//
-//        public Pair(int index, int value) {
-//            this.index = index;
-//            this.value = value;
-//        }
-//
-//        @Override
-//        public String toString() {
-//            return index + " :- " + value;
-//        }
-//    }
-
 }

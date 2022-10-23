@@ -1,0 +1,56 @@
+Check if a given Binary Tree is a Heap
+Given a binary tree, check if it has heap property or not, Binary tree needs to fulfill the following two conditions for being a heap – 
+
+It should be a complete tree (i.e. all levels except the last should be full).
+Every node’s value should be greater than or equal to its child node (considering max-heap).
+
+isMaxHeap(Node node){
+//3 Cases 
+
+if(node == null){ //For null node
+	return true;
+}
+
+if(node.left == null && node.right == null){ //For null node
+	return true;
+}
+
+if(node.left != null && node.left.data > node.data){
+	false;
+}	
+
+if(node.right != null && node.right.data > node.data){
+	false;
+}
+return isHeap(node.left) && node.right;
+}
+
+boolean isCBT(Node node){
+	Queue<Node> nodeQueue = new LinkedList();
+	nodeQueue.add(node);
+	boolean isLeftAbsent = false;
+	while(!nodesQueue.isEmpy()){
+		Node curNode = nodesQueue.poll();
+		if(currNode == null){
+			isLeftAbsent = true;
+		} else {
+			if(isLeftAbsent){
+				return false;
+			}
+			nodesQueue.add(currNode.left);
+			nodesQueue.add(currNode.right);
+		}
+	}
+}
+
+
+Node root = new Node(51);
+root.left = new Node(48);
+root.right = new Node(35);
+
+root.left.right = new Node(25); 
+
+root.right.left = new Node(20);
+root.right.right = new Node(30);
+
+
