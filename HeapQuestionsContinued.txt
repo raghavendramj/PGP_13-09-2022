@@ -54,3 +54,29 @@ root.right.left = new Node(20);
 root.right.right = new Node(30);
 
 
+
+Assignment :-
+
+1. PreOrder, Inorder, PostOrder -> CBT -> 
+
+
+Answer tried :- 
+
+boolean checkCbt(TreeNode node)
+{
+	if(node==null) 
+		return true;
+	if(node.right==null && node.left!=null) 
+		return true;
+	if(node.left==null && node.right!=null) 
+		return false;
+	return checkCbt(node.left) && checkCbt(node.right);
+}
+
+https://leetcode.com/problems/find-median-from-data-stream/
+
+
+
+how to handle stream data? we havn't used StreamAPI before 
+get data from db and inside software playing with  catching data USING DATASTRUCTURE 
+JSON and XML is the Medium to clock the Database and the Data we use in our Data Structure

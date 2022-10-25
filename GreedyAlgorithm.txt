@@ -1,0 +1,52 @@
+Greedy Algorithm
+A greedy algorithm is an approach for solving a problem by selecting the best option available at the moment. It doesn't worry whether the current best result will bring the overall optimal result.
+
+Following properties:-
+1. Greedy Choice Property
+2. Optimal Substructure
+
+Advantages of Greedy Approach
+	The algorithm is easier to describe.
+	This algorithm can perform better than other algorithms (but, not in all cases).
+	
+Drawback of Greedy Approach
+As mentioned earlier, the greedy algorithm doesn't always produce the optimal solution. This is the major disadvantage of the algorithm
+
+Problem: You have to make a change of an amount using the smallest possible number of coins.
+Amount: $18
+Available coins are
+  $5 coin
+  $2 coin
+  $1 coin
+Note :- There is no limit to the number of each coin you can use.
+Answer :- {5, 5, 5, 2, 1}
+
+Question:- 
+	Activity Selection Problem
+		-> Maximum Meetings in One Room
+			There is one meeting room in a firm. There are N meetings in the form of (S[i], F[i]) where S[i] is the start time of meeting i and F[i] is the finish time of meeting i. The task is to find the maximum number of meetings that can be accommodated in the meeting room. You can accommodate a meeting if the start time of the meeting is strictly greater than the finish time of the previous meeting. Print all meeting numbers.
+			
+			Start Time = 	{1, 3,	0,	5,	8,	5}
+			Finish Time  =  {2, 4, 6, 7, 9, 9} 
+			
+			
+	
+Algorithm :-
+		
+		List -> Pair<Start, end>
+		Sort the pairs based on endTime/finishtime
+		
+		answers.add(1st pair); // Greedy approach works
+		pick first curEndTime,
+		
+		List -> Pair -> answers
+		for 1 -> n
+			if(nextStartTime > curEndTime){
+				answers.add(pair);
+				curEndTime = nextStartTime
+			}
+		
+		Sort the resultant collection answers
+		return answers
+	
+			

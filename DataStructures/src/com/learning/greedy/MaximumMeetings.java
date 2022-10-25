@@ -1,4 +1,5 @@
-package com.learning.ds.greedy;
+
+package com.learning.greedy;
 
 import java.util.*;
 
