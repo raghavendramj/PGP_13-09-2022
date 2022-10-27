@@ -8,7 +8,7 @@ Following properties:-
 Advantages of Greedy Approach
 	The algorithm is easier to describe.
 	This algorithm can perform better than other algorithms (but, not in all cases).
-	
+
 Drawback of Greedy Approach
 As mentioned earlier, the greedy algorithm doesn't always produce the optimal solution. This is the major disadvantage of the algorithm
 
@@ -21,32 +21,118 @@ Available coins are
 Note :- There is no limit to the number of each coin you can use.
 Answer :- {5, 5, 5, 2, 1}
 
-Question:- 
+Question:-
 	Activity Selection Problem
 		-> Maximum Meetings in One Room
 			There is one meeting room in a firm. There are N meetings in the form of (S[i], F[i]) where S[i] is the start time of meeting i and F[i] is the finish time of meeting i. The task is to find the maximum number of meetings that can be accommodated in the meeting room. You can accommodate a meeting if the start time of the meeting is strictly greater than the finish time of the previous meeting. Print all meeting numbers.
-			
+
 			Start Time = 	{1, 3,	0,	5,	8,	5}
-			Finish Time  =  {2, 4, 6, 7, 9, 9} 
-			
-			
-	
+			Finish Time  =  {2, 4, 6, 7, 9, 9}
+
+
+
 Algorithm :-
-		
+
 		List -> Pair<Start, end>
 		Sort the pairs based on endTime/finishtime
-		
+
 		answers.add(1st pair); // Greedy approach works
 		pick first curEndTime,
-		
+
 		List -> Pair -> answers
 		for 1 -> n
 			if(nextStartTime > curEndTime){
 				answers.add(pair);
 				curEndTime = nextStartTime
 			}
-		
+
 		Sort the resultant collection answers
 		return answers
+--------------------------------------------
+Minimum product subset of an array
+--------------------------------------------
+Given array a, we have to find the minimum product possible with the subset of elements present in the array. The minimum product can be a single element also.
+Examples:
+
+Input : a[] = { -1, -1, -2, 4, 3 }
+Output : -24
+Explanation : Minimum product will be ( -2 * -1 * -1 * 4 * 3 ) = -24
+
+Input : a[] = { -1, 0 }
+Output : -1
+Explanation : -1(single element) is minimum product possible
+
+ Input : a[] = { 0, 0, 0 }
+Output : 0
+
+{-1, -3} -> -3
+
+int minProdSubSet(int arr[], int n){
+	//base case 
+	if(n ==1){
+		return a[0];
+	}
 	
+	//Finding the count of the following
+	1. Count of zeros
+	2. Count of negative numbers
+	3. maximum valued negative number.
+	4. minimum valued negative number. 
+	5. Positive numbers
+	6. Product of non zero numbers.
+	
+	for i-> 0 to n {
+		if element is 0
+			increment zeroCount;
+			skip the rest -> continue;
+		
+		if element is < 0
+			increment negativeCount;
+			maxNegative = Math.max(maxNegative, element);  // Math.max(-1, -20) -> -1
+			minNegative = Math.min(minNegative, element);  // Math.max(-1, -20) -> -20
 			
+		//finding the minimum +ve number
+		if element > 0 && element < minNumber
+			minNumber = element;
+			
+		 product *= element;
+	}
+		 
+	Case 1:- If all the numbers are zeros
+				if zeroCount == n
+					return 0;
+				 
+	Case 2:-  Zero without negative, min will be ze
+				if(negativeCount == 0 and zeroCount > 0)
+					return 0;
+					
+	Case 3:- Even number of negative numbers
+			if(negativeCount % 2 == 0 && negativeCount != 0){
+					product = produce / maxNegative;
+			}
+			
+	case 4:- If no negative numbers
+			if(negativeCount == 0)
+				return minNumber;
+	return product;	
+} 
+
+--------------------------------------------
+Maximum product subset of an array
+--------------------------------------------
+Given array a, we have to find the maximum product possible with the subset of elements present in the array. The maximum product can be a single element also.
+Examples:
+
+Input : a[] = { -1, -1, -2, 4, 3 }
+Output : 24
+Explanation : maximum product will be ( -2 * -1 * -1 * 4 * 3 ) = -24
+
+Input : a[] = { -1, 0 }
+Output : 0
+Explanation : -1(single element) is maximum product possible
+
+ Input : a[] = { 0, 0, 0 }
+Output : 0
+
+
+
