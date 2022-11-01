@@ -1,0 +1,23 @@
+
+Easy ->
+	Beginning
+	Brute Force -> Solution -> 15-20 mins 
+	Optimal -> Solution -> 20-25 mins 
+	
+	250 + Easy Problems - 400
+	Last 50/100 -> 	
+		Brute Force -> Solution -> 6-8 mins 
+		Optimal -> Solution -> 8-12 mins
+		
+Medium to Hard
+	Beginning
+	Brute Force -> Solution -> 15-25 mins 
+	Optimal -> Solution -> 20-30 mins 
+	
+	250 + Easy Problems - 400
+	Last 50/100 -> 	
+		Brute Force -> Solution -> 8-12 mins 
+		Optimal -> Solution -> 15-20 mins
+		
+	45 mins -> 2 medium to hard problems
+	

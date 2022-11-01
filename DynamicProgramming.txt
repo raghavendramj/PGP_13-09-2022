@@ -1,0 +1,126 @@
+Dynamic Programming
+--------------------------
+
+1. Overlapping subproblems
+	When the solutions to the same subproblems are needed repetitively for solving the actual problem. The problem is said to have overlapping subproblems property.
+
+2. Optimal Substructure Property:
+	If the optimal solution of the given problem can be obtained by using optimal solutions of its subproblems then the problem is said to have Optimal Substructure Property.
+
+	Fibonacci Series :-
+		-> Using memoization
+			Time Complexity -> O(n)
+			Space Complexity ->
+				O(n)(Recursion Stack)  + O(n) -> array/map => O(n) + O(n) = O(n)
+
+		-> Using Tabulation
+			Time Complexity -> O(n)
+			Space Complexity -> O(1)
+
+
+
+Revision :-
+	Largest Sum Contiguous Subarray (Kadane’s Algorithm)
+		Given an array arr[] of size N. The task is to find the sum of the contiguous subarray within a arr[] with the largest sum.
+		Input :- {-2, -3, 4, -1, -2, 1, 5, -3}
+
+	Algorithm :-
+		currentMax = MIN_VALUE;
+		interMax = 0; //Out intermediate max should never become negative
+
+		for i -> 0 to n;
+			interMax = interMax+ arr[i];
+
+			if(currentMax < interMax) // Check for maximum value here
+				currentMax = interMax;
+
+			if(interMax < 0) //ignore negative value;
+				interMax = 0;
+
+Find maximum possible stolen value from houses
+	There are N houses built in a line, each of which contains some value in it. A thief is going to steal the maximal value of these houses, but he can’t steal in two adjacent houses because the owner of the stolen houses will tell his two neighbors left and right sides. The task is to find what is the maximum stolen value.
+
+	int houseValue[] = {6, 7, 1, 3, 8, 2, 4}
+	Output :- 19
+
+	Algorithm:- Recursion
+												{6, 7, 1, 3, 8, 2, 4}   	6
+		maximumStolenValue -> houseValue[] and noOfHouse
+
+		//case 1:- No houses
+		if(n < 0)
+			return 0;
+		//Case 2: Only one house
+		if n == 0
+			return houseValue[n];
+
+		int firstPick = houseValue[n] + maximumStolenValue(houseValue, n-2)
+		int nextPick = maximumStolenValue(houseValue, n-1)
+
+		int maximumStolenValue = Math.max(firstPick, nextPick);
+		return maximumStolenValue;
+
+Knapsack :-
+	Knapsack variations
+		0/1 knapsack
+		fractional knapsack -> greedy approach
+		Unbounded knapsack
+
+	Longest Common Subsequence
+	Matrix Multiplication
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
