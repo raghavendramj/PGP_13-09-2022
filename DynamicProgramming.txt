@@ -68,69 +68,47 @@ Knapsack :-
 
 	Longest Common Subsequence
 	Matrix Multiplication
-	
-	
-Assignment :- 
+
+Assignment :-
 
 	A thief needs to rob money in a street. The houses in the street are arranged in a circular manner. Therefore the first and the last house are adjacent to each other. The security system in the street is such that if adjacent houses are robbed, the police will get notified.
-	
+
 	input :- [2, 1, 4, 9]
 	output - 10 -> 9+1
 
-
 	input :- [1, 5, 2, 1, 6]
-	output - 11 -> 5+ 6
+	output - 11 -> 5+ 6 
 	
+Knapsack :-
+	Knapsack variations
+		0/1 knapsack
+		fractional knapsack -> greedy approach
+		Unbounded knapsack 
+		
+0/1 knapsack Problems :- 
+----------------------------- 
+1. Subset sum problem
+2. Equal sum partition
+3. Count of subset sum
+4. Minimum subset sum diff
+5. Target sum
+6 Number of subset with given difference.
 
+1. Given a set of non-negative integers, and a value sum, determine if there is a subset of the given set with sum equal to given sum.  
 
+	Input: set[] = {3, 34, 4, 12, 5, 2}, sum = 9
+	Output: True  
+	There is a subset (4, 5) with sum 9.
 
+	Input: set[] = {3, 34, 4, 12, 5, 2}, sum = 30
+	Output: False
+	There is no subset that add up to 30.
 
+2. Given an array arr[] of length N and an integer X, the task is to find the number of subsets with a sum equal to X.
+	Input: arr[] = {1, 2, 3, 3}, X = 6 
+	Output: 3 
+	All the possible subsets are {1, 2, 3}, 
+	{1, 2, 3} and {3, 3}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	Input: arr[] = {1, 1, 1, 1}, X = 1 
+	Output: 4 
