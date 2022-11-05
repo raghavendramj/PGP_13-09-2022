@@ -77,16 +77,16 @@ Assignment :-
 	output - 10 -> 9+1
 
 	input :- [1, 5, 2, 1, 6]
-	output - 11 -> 5+ 6 
-	
+	output - 11 -> 5+ 6
+
 Knapsack :-
 	Knapsack variations
 		0/1 knapsack
 		fractional knapsack -> greedy approach
-		Unbounded knapsack 
-		
-0/1 knapsack Problems :- 
------------------------------ 
+		Unbounded knapsack
+
+0/1 knapsack Problems :-
+-----------------------------
 1. Subset sum problem
 2. Equal sum partition
 3. Count of subset sum
@@ -94,21 +94,35 @@ Knapsack :-
 5. Target sum
 6 Number of subset with given difference.
 
-1. Given a set of non-negative integers, and a value sum, determine if there is a subset of the given set with sum equal to given sum.  
-
+1. Given a set of non-negative integers, and a value sum, determine if there is a subset of the given set with sum equal to given sum.
 	Input: set[] = {3, 34, 4, 12, 5, 2}, sum = 9
-	Output: True  
+	Output: True
 	There is a subset (4, 5) with sum 9.
-
 	Input: set[] = {3, 34, 4, 12, 5, 2}, sum = 30
 	Output: False
-	There is no subset that add up to 30.
-
+	There is no subset that add up to 30. 
+	
 2. Given an array arr[] of length N and an integer X, the task is to find the number of subsets with a sum equal to X.
-	Input: arr[] = {1, 2, 3, 3}, X = 6 
-	Output: 3 
-	All the possible subsets are {1, 2, 3}, 
+	Input: arr[] = {1, 2, 3, 3}, X = 6
+	Output: 3
+	All the possible subsets are {1, 2, 3},
 	{1, 2, 3} and {3, 3}
 
-	Input: arr[] = {1, 1, 1, 1}, X = 1 
-	Output: 4 
+	Input: arr[] = {1, 1, 1, 1}, X = 1
+	Output: 4
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+Unbounded Knapsack Problems :-
+-----------------------------
+1. Rod cutting
+2. Coin change I
+3. Coin change II
+4.  Maximum ribbon cut
