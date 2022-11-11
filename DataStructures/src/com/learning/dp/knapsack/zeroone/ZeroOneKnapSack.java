@@ -1,4 +1,4 @@
-package com.learning.assignments;
+package com.learning.dp.knapsack.zeroone;
 
 public class ZeroOneKnapSack {
 
@@ -10,8 +10,9 @@ public class ZeroOneKnapSack {
 
         if (wt[n - 1] <= mw) {
             int reducedMaxWeight = mw - wt[n - 1]; //Remove currently considered weight's profit.
-            int profit = pf[n - 1] + knapSackRecursive(wt, pf, reducedMaxWeight, n - 1); //Profit for current weight
-            return Math.max(profit, knapSackRecursive(wt, pf, mw, n - 1));
+            int pick = pf[n - 1] + knapSackRecursive(wt, pf, reducedMaxWeight, n - 1); //Profit for current weight
+            int notPick = knapSackRecursive(wt, pf, mw, n - 1);
+            return Math.max(pick, notPick);
 
 //            return Math.max(pf[n - 1] + knapSackRecursive(wt, pf, mw - wt[n - 1], n - 1),
 //                    knapSackRecursive(wt, pf, mw, n - 1));

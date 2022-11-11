@@ -1,4 +1,4 @@
-package com.learning.dp.knapsack;
+package com.learning.dp.knapsack.zeroone;
 
 public class SubsetSum {
 
