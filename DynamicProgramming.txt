@@ -119,41 +119,40 @@ Unbounded Knapsack Problems :-
 4.  Maximum ribbon cut
 
 Unbounded Knapsack
-------------------------- 
+-------------------------
 
 	Coin change I
 	Given an integer array of coins[ ] of size N representing different types of currency and an integer sum, The task is to find the number of ways to make sum by using different combinations from coins[].
-		Input: sum = 4, coins[] = {1,2,3}, 
-		
+		Input: sum = 4, coins[] = {1,2,3},
+
 		Output: 4
 		Explanation: there are four solutions: {1, 1, 1, 1}, {1, 1, 2}, {2, 2}, {1, 3}.
 
 		Input: sum = 10, coins[] = {2, 5, 3, 6}
 		Output: 5
 		Explanation: There are five solutions:
-		{2,2,2,2,2}, {2,2,3,3}, {2,2,6}, {2,3,5} and {5,5}. 
-		
+		{2,2,2,2,2}, {2,2,3,3}, {2,2,6}, {2,3,5} and {5,5}.
+
 Longest Common Subsequence
 ----------------------------------
-Variations :- 
-1. Largest Common Substring
-2. Print LCS
-3. Shortest Common Supersequecne
-4. Print SCS
-5. Minimum no of insertions and deletion to get a -> b ex:- "heap" -> "pea" (In Class)
-6. Subsequence pattern matching 
-7. Count how many times str1 appears as subsequence in str2
-8. Length of largest subsequence of str1 which is substringof str2
-9. Longest repeating subsequence (In Class)
-10. Largest palindromic subsequence
-11. longest palindrome substring
-12. count of palindromic substring
-13. Minimum no of deletion in a substring to make it a palindrome.
-14. Minimum no of insertions in a substring to make its a palindrome. (In Class)
+Variations :-
+	1. Largest Common Substring
+	2. Print LCS
+	3. Shortest Common Supersequecne
+	4. Print SCS
+	5. Minimum no of insertions and deletion to get a -> b ex:- "heap" -> "pea" (In Class)
+	6. Subsequence pattern matching
+	7. Count how many times str1 appears as subsequence in str2
+	8. Length of largest subsequence of str1 which is substringof str2
+	9. Longest repeating subsequence (In Class)
+	10. Largest palindromic subsequence  (In Class)
+	11. longest palindrome substring
+	12. count of palindromic substring
+	13. Minimum no of deletion in a substring to make it a palindrome.  (In Class)
+	14. Minimum no of insertions in a substring to make its a palindrome. (In Class)
 
-LCS Problem Statement: Given two sequences, find the length of longest subsequence present in both of them. 
-A subsequence is a sequence that appears in the same relative order, but not necessarily contiguous. For example, “abc”, “abg”, “bdf”, “aeg”, ‘”acefg”, .. etc are subsequences of “abcdefg”. 
-
+LCS Problem Statement: Given two sequences, find the length of longest subsequence present in both of them.
+A subsequence is a sequence that appears in the same relative order, but not necessarily contiguous. For example, “abc”, “abg”, “bdf”, “aeg”, ‘”acefg”, .. etc are subsequences of “abcdefg”.
 
 abcraga
 abragdc
@@ -164,7 +163,7 @@ abragdc
 str1 -> ABCDGH
 str2 -> AEDFHR
 	-> ADH
-	
+
 String 1:-  ABCAB
 String 2 :- AECB
 Answer :- ACB -> 3
@@ -185,10 +184,10 @@ static int longestCommonSubSequence(char[] x, char[] y, int m, int n) {
         }
     }
 
-	static int lcsTab(char[] x, char[] y, int m, int n) { 
+	static int lcsTab(char[] x, char[] y, int m, int n) {
         if (m == 0 || n == 0)
             return 0;
-       
+
 	   int dp[][] = new int [m+1][n+1];
 	   for(int i= 1; i<=m; i++){
 			for(int j=1; j<=n; j++){
@@ -200,27 +199,27 @@ static int longestCommonSubSequence(char[] x, char[] y, int m, int n) {
 					dp[i][j] = Math.max(pick, notPick);
 				}
 			}
-	   }  
+	   }
 	   return dp[m][n];
     }
-	
-Minimum number of deletions and insertions to transform one string into another :- 
+
+Minimum number of deletions and insertions to transform one string into another :-
 Given two strings ‘str1’ and ‘str2’ of size m and n respectively. The task is to remove/delete and insert the minimum number of characters from/in str1 to transform it into str2. It could be possible that the same character needs to be removed/deleted from one point of str1 and inserted to some another point.
 
-Input : 
-str1 = "heap", str2 = "pea" 
+Input :
+str1 = "heap", str2 = "pea"
 
-Output : 
+Output :
 Minimum Deletion = 2 and
-Minimum Insertion = 1 
+Minimum Insertion = 1
 
 
 LCS -> "heap",  "pea"  -> ea -> 2
 
 	math.abs("heap" - "ea") = 2 -> Deletions
 	math.abs("pea" - "ea") = 1 -> Insertions
-	
-	
+
+
 Example :- s1 -> "hefap"
 				s2 -> "pea"
 				lcs -> ea -> 2
@@ -230,7 +229,7 @@ Example :- s1 -> "hefap"
 Assignment :- Take any of recursion/tabulation/memoization -> do the necessary changes.
 
 Longest Repeating Subsequence
-Given a string, find the length of the longest repeating subsequence, such that the two subsequences don’t have same string character at the same position, i.e. any ith character in the two subsequences shouldn’t have the same index in the original string. 
+Given a string, find the length of the longest repeating subsequence, such that the two subsequences don’t have same string character at the same position, i.e. any ith character in the two subsequences shouldn’t have the same index in the original string.
 
 Input: str = "abc"
 Output: 0
@@ -239,36 +238,109 @@ There is no repeating subsequence
 Input: str = "aab"
 Output: 1
 
-Input: str = "aabebcdd" -> abd 
-Output: 3 
+Input: str = "aabebcdd" -> abd
+Output: 3
 
-Input: str = "aabb" -> ab 
-Output: 2 
-
-Input: str = "axxxy" ->  
+Input: str = "aabb" -> ab
 Output: 2
 
-Minimum insertions to form a palindrome
-Given string str, the task is to find the minimum number of characters to be inserted to convert it to a palindrome.
+Input: str = "axxxy" ->
+Output: 2
 
-ab -> aba -> 1
-abcd -> abcdcba -> 3
-mada -> madam -> 1
-gad -> gadag -> 2
+Longest Palindromic Subsequence
+	Given a sequence, find the length of the longest palindromic subsequence in it.
+	As another example, if the given sequence is “BBABCBCAB”, then the output should be 7 as “BABCBAB” is the longest palindromic subsequence in it.
+	“BBBBB” and “BBCBB” are also palindromic subsequences of the given sequence, but not the longest ones.
 
+	agbcba -> abcba -> 5
+	bbabcbcab -> babcbab -> 7
+
+Minimum insertions/deletions to form a palindrome
+	Given string str, the task is to find the minimum number of characters to be inserted to convert it to a palindrome.
+
+	ab -> aba -> 1
+	abcd -> abcdcba -> 3
+	mada -> madam -> 1
+	gad -> gadag -> 2
 
 Word Break Problem
-Given an input string and a dictionary of words, find out if the input string can be segmented into a space-separated sequence of dictionary words. See following examples for more details. 
-dictionary 
-{ i, like, sam, sung, samsung, mobile, ice,  cream, icecream, man, go, mango}
-  
-  
-Input:  ilike
-Output: Yes 
-The string can be segmented as "i like".
+	Given an input string and a dictionary of words, find out if the input string can be segmented into a space-separated sequence of dictionary words. See following examples for more details.
+	dictionary
+	{ i, like, sam, sung, samsung, mobile, ice,  cream, icecream, man, go, mango}
 
-Input:  ilikesamsung
-Output: Yes
-The string can be segmented as "i like samsung" or "i like sam sung".
+	Input:  ilike
+	Output: Yes
+	The string can be segmented as "i like".
+
+	Input:  ilikesamsung
+	Output: Yes
+	The string can be segmented as "i like samsung" or "i like sam sung".
+
+
+Matrix Chain Multiplication Format :-
+----------------------------------------
+Given the dimension of a sequence of matrices in an array arr[], where the dimension of the ith matrix is (arr[i-1] * arr[i]), the task is to find the most efficient way to multiply these matrices together such that the total number of element multiplications is minimum.
+
+Input: arr[] = {40, 20, 30, 10, 30}
+Output: 26000
+
+Input: arr[] = {1, 2, 3, 4, 3}
+Output: 30
+
+
+ {40, 20, 30, 10, 30}
+
+ Base Cases
+
+	-> i,  ----------------------------   j
+	int solve(int arr[], int i, int j){
+		//Case 1:-  noOfElements > 1 elements if i crosses j means, we can't partition anymore
+		//Case 2 :- noOfElements = 1, i==j
+		if(i > j || i==j){
+			return 0;
+		}
+		int minCost = MAX_VALUE;
+		for(int k=i; k< j-1; k++){
+			int tempAnswer  = arr[i-1] * arr[k] * arr[j] + solve(arr, i, k) + solve(arr, k+1, j);
+
+			if(minCost > tempAnswer){
+				minCost = tempAnswer;
+			}
+		}
+		return minCost;
+	}
+
+
+MCM -> identification
+	String
+	i ------------> j
+	i -> k, k+1 -> j
+
+
+Matrix Chain Multiplication
+-------------------------------
+Variations:-
+	1. Matrix Chain Multiplication(In Class)
+	2. Evaluate expression to true
+	3. Minimum/Maximum value of an expression
+	4. Palindrome partitioning (In Class)
+	5. Egg Dropping problem
+	6. Scrambled String
+	7. Egg dropping problem
+	8. Edit Distance (Assignment)
+
+
+Assignment :-
+
+0. Memoized(top down) and Tabulation(bottom up) for MCM
+
+1. Palindrome partitioning
+---------------------------
+Given a string, a partitioning of the string is a palindrome partitioning if every substring of the partition is a palindrome. For example, “aba|b|bbabb|a|b|aba” is a palindrome partitioning of “ababbbabbababa”. Determine the fewest cuts needed for a palindrome partitioning of a given string. For example, minimum of 3 cuts are needed for “ababbbabbababa”. The three cuts are “a|babbbab|b|ababa”. If a string is a palindrome, then minimum 0 cuts are needed. If a string of length n containing all different characters, then minimum n-1 cuts are needed. 
+
+2. Edit Distance (Assignment)
+
+
+
 
 
