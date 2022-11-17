@@ -27,4 +27,25 @@ public class MatrixChainMultiplication {
         }
         return minCost;
     }
+
+    static int solveMemoized(int arr[], int i, int j, int memo[][]) {
+
+        if (i >= j) {
+            return 0;
+        }
+
+        if (memo[i][j] != -1)
+            return memo[i][j];
+
+        memo[i][j] = Integer.MAX_VALUE;
+
+        for (int k = i; k < j; k++) {
+            int tempAnswer = solve(arr, i, k)
+                    + solve(arr, k + 1, j)
+                    + arr[i - 1] * arr[k] * arr[j];
+
+            memo[i][j] = Math.min(memo[i][j], tempAnswer);
+        }
+        return memo[i][j];
+    }
 }

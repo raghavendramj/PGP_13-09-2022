@@ -325,10 +325,8 @@ Variations:-
 	3. Minimum/Maximum value of an expression
 	4. Palindrome partitioning (In Class)
 	5. Egg Dropping problem
-	6. Scrambled String
-	7. Egg dropping problem
-	8. Edit Distance (Assignment)
-
+	6. Scrambled String 
+	7. Edit Distance (Assignment)
 
 Assignment :-
 
@@ -336,11 +334,23 @@ Assignment :-
 
 1. Palindrome partitioning
 ---------------------------
-Given a string, a partitioning of the string is a palindrome partitioning if every substring of the partition is a palindrome. For example, “aba|b|bbabb|a|b|aba” is a palindrome partitioning of “ababbbabbababa”. Determine the fewest cuts needed for a palindrome partitioning of a given string. For example, minimum of 3 cuts are needed for “ababbbabbababa”. The three cuts are “a|babbbab|b|ababa”. If a string is a palindrome, then minimum 0 cuts are needed. If a string of length n containing all different characters, then minimum n-1 cuts are needed. 
-
+Given a string, a partitioning of the string is a palindrome partitioning if every substring of the partition is a palindrome. For example, “aba|b|bbabb|a|b|aba” is a palindrome partitioning of “ababbbabbababa”. 
+Determine the fewest cuts needed for a palindrome partitioning of a given string. 
+For example, minimum of 3 cuts are needed for “ababbbabbababa”. 
+The three cuts are “a|babbbab|b|ababa”. 
+If a string is a palindrome, then minimum 0 cuts are needed. If a string of length n containing all different characters, then minimum n-1 cuts are needed. 
+ 
 2. Edit Distance (Assignment)
+Given two strings str1 and str2 and below operations that can be performed on str1. Find minimum number of edits (operations) required to convert ‘str1’ into ‘str2’.  
+
+Insert
+Remove
+Replace
 
 
+Input:   str1 = “cat”, str2 = “cut”
+Output:  1
+Explanation: We can convert str1 into str2 by replacing ‘a’ with ‘u’.
 
-
-
+Input:   str1 = “sunday”, str2 = “saturday”
+Output:  3 
