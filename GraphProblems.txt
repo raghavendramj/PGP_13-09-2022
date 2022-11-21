@@ -1,7 +1,5 @@
 Graph Basics
 
- 
- 
 Vertex 0 :-> 1-> 2-> 3
 Vertex 1 :-> 0-> 2-> 4
 Vertex 2 :-> 0-> 1-> 4
@@ -10,4 +8,11 @@ Vertex 4 :-> 1-> 2
 depthFirstSearch :- [2, 0, 1, 4, 3]
 
 
-Question :- find minimum distance from source to destination graph
+Question :- find minimum distance from source to destination graph?
+Question :- Detect cycle in an undirected graph
+			    Given an undirected graph with V vertices and E edges, check whether it contains any cycle or not.
+
+
+Detect cycle in a directed graph
+	Given a Directed Graph with V vertices (Numbered from 0 to V-1) and E edges, check whether it contains any cycle or not.
+
