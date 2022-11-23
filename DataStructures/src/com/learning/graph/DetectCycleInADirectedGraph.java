@@ -25,6 +25,8 @@ public class DetectCycleInADirectedGraph {
         graph.addEdge(4, 2);
 
         graph.printDirectedGraphElements(graph.adj);
+
+        System.out.println("Does this graph contains any cycle ? " + graph.isCyclic(0, graph.adj));
     }
 
     boolean isCyclic(int vertex, List<Integer> adj[]) {
@@ -44,6 +46,7 @@ public class DetectCycleInADirectedGraph {
     }
 
     boolean dfs(int currentVertex, List<Integer>[] adj, boolean[] visited, boolean[] recS) {
+
         visited[currentVertex] = true;
         recS[currentVertex] = true;
 
@@ -58,7 +61,7 @@ public class DetectCycleInADirectedGraph {
             }
         }
         recS[currentVertex] = false;
-        return true;
+        return false;
     }
 
     void addEdge(int source, int dest) {
