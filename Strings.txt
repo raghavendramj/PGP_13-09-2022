@@ -1,0 +1,12 @@
+Strings
+
+char[] chars = {'g', 'l'};
+String str1 = new String(chars);
+String str2 = "gl";
+
+
+Assignment :- Write a program to print all Permutations of given String
+Given a string S, the task is to write a program to print all permutations of a given string.
+
+Input: S = “ABC”
+Output: “ABC”, “ACB”, “BAC”, “BCA”, “CBA”, “CAB”

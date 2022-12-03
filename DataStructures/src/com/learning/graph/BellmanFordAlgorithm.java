@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class BellmanFordAlgorithm {
 
     int isNegativeWeightCycle(int n, int edges[][]) {
-        int dist[] = new int[];
+        int dist[] = new int[n];
         Arrays.fill(dist, Integer.MAX_VALUE);
         dist[0] = 0;
 
