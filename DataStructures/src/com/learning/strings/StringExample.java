@@ -14,6 +14,6 @@ public class StringExample {
         System.out.println("S1's address :- "+ s1.hashCode());
         System.out.println("S2's address :- "+ s2.hashCode());
 
-        String s3 = "Raghav";
+        String s3 = new String("Raghav");
     }
 }
