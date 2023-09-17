@@ -1,8 +1,8 @@
 package com.learning.graph;
 
 public class Pair implements Comparable<Pair> {
-    int vertex;
-    int weight;
+    public int vertex;
+    public int weight;
 
     public Pair(int vertex, int weight) {
         this.vertex = vertex;

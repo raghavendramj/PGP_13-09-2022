@@ -37,7 +37,7 @@ public class MergingOverlappingIntervals {
 
             // if the top interval of the stack overlaps with the current interval,
             // merge two intervals by updating the end of the top interval
-            // to the current interval
+            //a to the current interval
             if (stack.peek().end < curr.end) {
                 stack.peek().end = curr.end;
             }

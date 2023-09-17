@@ -22,8 +22,10 @@ public class CheckIfBtIsBSTJava {
     }
 
     private boolean checkBST(Node node, long min, long max) {
-        if (node == null) return true;
-        if (node.data <= min || node.data >= max) return false;
+        if (node == null)
+            return true;
+        if (node.data <= min || node.data >= max)
+            return false;
 
         if (checkBST(node.left, min, node.data) && checkBST(node.right, node.data, max)) {
             return true;
